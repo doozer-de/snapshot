@@ -1,1 +1,1 @@
-# snapshot
+# Snapshot module
