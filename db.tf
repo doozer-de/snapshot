@@ -24,9 +24,6 @@ resource "aws_db_instance" "snapshot" {
   vpc_security_group_ids  = [aws_vpc.snapshot.default_security_group_id]
   backup_retention_period = 0
   maintenance_window      = "mon:18:00-mon:20:00"
-  lifecycle {
-    ignore_changes = [snapshot_identifier]
-  }
 }
 
 resource "aws_db_subnet_group" "snapshot" {
