@@ -5,6 +5,7 @@ data "aws_route53_zone" "zone" {
 data "aws_db_snapshot" "latest" {
   db_instance_identifier = var.parent
   most_recent            = true
+  snapshot_type          = "automated"
 }
 
 data "aws_db_instance" "current" {
