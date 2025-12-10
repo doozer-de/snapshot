@@ -20,7 +20,7 @@ resource "aws_db_instance" "snapshot" {
   publicly_accessible     = true
   storage_encrypted       = data.aws_db_instance.current.storage_encrypted
   allocated_storage       = data.aws_db_instance.current.allocated_storage
-  instance_class          = data.aws_db_instance.current.db_instance_class
+  instance_class          = "db.t4g.medium" # data.aws_db_instance.current.db_instance_class
   db_subnet_group_name    = aws_db_subnet_group.snapshot.name
   vpc_security_group_ids  = [aws_vpc.snapshot.default_security_group_id]
   backup_retention_period = 0
